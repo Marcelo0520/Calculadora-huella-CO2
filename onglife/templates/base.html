@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Unimanga{% endblock %}</title>
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/logo.svg'%}"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}"> 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+</head>
+<body>
+    <header>
+        <nav class="{% block nav_class %}default-nav{% endblock %}">
+            <div class="logo">
+                <a href="{% url 'inicio' %}">
+                    OngLife
+                </a>
+            </div>
+      
+              <div class="menu-bar">
+                <a href="{% url 'inicio'%}" class="{% if request.path == '/' %}active{% endif %}">Inicio</a>
+                <a href="{% url 'inicio'%}" class="{% if request.path == '/' %}active{% endif %}">Inicio</a>
+                <a href="{% url 'inicio'%}" class="{% if request.path == '/' %}active{% endif %}">Inicio</a>
+                <a href="{% url 'inicio'%}" class="{% if request.path == '/' %}active{% endif %}">Inicio</a>
+                <a href="{% url 'nosotros'%}" class="{% if request.path == '/' %}active{% endif %}">Nosotros</a>
+              </div>
+              <div class="account">
+                <a href="#">Registrarse</a>
+                <a href="#">Iniciar sesión</a>
+              </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container2">
+          <div class="footer-row">
+            <div class="footer-links">
+              <h4>Compañia</h4>
+              <ul>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Nuestros servicios</a></li>
+                <li><a href="#">Politica de privacidad</a></li>
+                <li><a href="#">Unete</a></li>
+              </ul>
+            </div>
+            <div class="footer-links">
+              <h4>Ayuda</h4>
+              <ul>
+                <li><a href="#">Preguntas</a></li>
+                <li><a href="#">Compras</a></li>
+                <li><a href="#">Envios</a></li>
+                <li><a href="#">Estatus de origen</a></li>
+                <li><a href="#">Pagos</a></li>
+              </ul>
+            </div>
+            <div class="footer-links">
+              <h4>Extras</h4>
+              <ul>
+                <li><a href="#">Pokemon</a></li>
+                <li><a href="#">Clima</a></li>
+                <li><a href="#">Ropa</a></li>
+              </ul>
+            </div>
+  
+            <div class="footer-links">
+              <h4>Contacto</h4>
+              <div class="social-link">
+                <a
+                  class="social"
+                  href=""
+                  target="_blank"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  class="social"
+                  href=""
+                  target="_blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  class="social"
+                  href=""
+                  target="_blank"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>
