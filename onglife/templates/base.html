@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Unimanga{% endblock %}</title>
+    <title>{% block title %}ONG Life & Sustainability Toda{% endblock %}</title>
     <link
       rel="shortcut icon"
       href="{% static 'images/logo.svg'%}"
@@ -27,16 +27,17 @@
       
               <div class="menu-bar">
                 <a href="{% url 'inicio'%}" class="{% if request.path == '/' %}active{% endif %}">Inicio</a>
-                <a href="{% url 'inicio'%}" class="{% if request.path == '/' %}active{% endif %}">Inicio</a>
-                <a href="{% url 'inicio'%}" class="{% if request.path == '/' %}active{% endif %}">Inicio</a>
-                <a href="{% url 'inicio'%}" class="{% if request.path == '/' %}active{% endif %}">Inicio</a>
-                <a href="{% url 'nosotros'%}" class="{% if request.path == '/' %}active{% endif %}">Nosotros</a>
+                <a href="#" class="{% if request.path == '/f' %}active{% endif %}">Clientes</a>
+                <a href="#" class="{% if request.path == '/d' %}active{% endif %}">Huella</a>
+                <a href="#" class="{% if request.path == '/s' %}active{% endif %}">Calculadora</a>
+                <a href="{% url 'nosotros' %}" class="{% if request.path == '/nosotros' %}active{% endif %}">Nosotros</a>
               </div>
               <div class="account">
-                <a href="#">Registrarse</a>
-                <a href="#">Iniciar sesión</a>
+                <a href="{% url 'registro' %}">Registrarse</a>
+                <a href="{% url 'login' %}">Iniciar sesión</a>
               </div>
         </nav>
+        
     </header>
 
     <main>
